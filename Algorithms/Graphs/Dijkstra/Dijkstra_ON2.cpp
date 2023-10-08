@@ -41,8 +41,8 @@ s a b c d e f g h
 
 #include <fstream>
 using namespace std;
-ifstream cin("dijkstra.in");
-ofstream cout("dijkstra.out");
+ifstream fin("dijkstra.in");
+ofstream fout("dijkstra.out");
 
 // #define INF (1 << 30) - 1
 #define INF 0
@@ -52,26 +52,26 @@ int n, p, a[1001][1001];
 void read()
 {
     int i, j, c;
-    cin >> n >> p;
+    fin >> n >> p;
     for (i = 1; i <= n; i++)
         for (j = 1; j <= n; j++)
             a[i][j] = INF;
-    while (cin >> i >> j >> c)
+    while (fin >> i >> j >> c)
         a[i][j] = c;
 }
 
 void show() 
 {
-    for (int i = 0; i <= n; i++) cout << i << " ";
-    cout << '\n';
+    for (int i = 0; i <= n; i++) fout << i << " ";
+    fout << '\n';
     for (int i = 1; i <= n; i++) {
-        cout << i << ' ';
+        fout << i << ' ';
         for (int j = 1; j <= n; j++) {
-            cout << a[i][j] << ' ';
+            fout << a[i][j] << ' ';
         }
-        cout << '\n';
+        fout << '\n';
     }
-    cout << "\n\n";
+    fout << "\n\n";
 }
 
 void Dijkstra()
@@ -94,10 +94,10 @@ void Dijkstra()
             if (!f[i] && d[i] > d[idmin] + a[idmin][i])
                 d[i] = d[idmin] + a[idmin][i];
     }
-    for (int i = 1; i <= n; i++) cout << i << ' ';
-    cout << '\n';
+    for (int i = 1; i <= n; i++) fout << i << ' ';
+    fout << '\n';
     for (int i = 1; i <= n; i++)
-        cout << (d[i] == INF ? -1 : d[i]) << ' ';
+        fout << (d[i] == INF ? -1 : d[i]) << ' ';
 }
 
 int main()

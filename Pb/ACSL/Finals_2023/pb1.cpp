@@ -5,7 +5,6 @@
 #include <string>
 #include <vector>
 using namespace std;
-ifstream cin("ctc.in");
 ofstream cout("ctc.out");
 
 struct Row {
@@ -118,10 +117,9 @@ string findARow(string original, string unused, string rows) {
 }
 
 int main() {
-    string original, unused, rows;
-    getline(cin, original);
-    getline(cin, unused);
-    getline(cin, rows);
-    cout << findARow(original, unused, rows);
+    cout << findARow(
+        "KWIC is an acronym for Key Word In Context, the most common format "
+        "for concordance lines which is used for indexing in context.",
+        "for in the", "7 15");
     return 0;
 }

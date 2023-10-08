@@ -3,8 +3,8 @@
 
 #include <fstream>
 using namespace std;
-ifstream cin("dijkstra.in");
-ofstream cout("dijkstra.out");
+ifstream fin("dijkstra.in");
+ofstream fout("dijkstra.out");
 
 #define INF 1000000000
 
@@ -12,14 +12,14 @@ int n, istart, a[101][101], d[101];
 
 void read() {
     int i, j, c;
-    cin >> n >> istart;
+    fin >> n >> istart;
     for (int i = 1; i <= n; i++) {
         for (int j = 1; j <= n; j++) {
             a[i][j] = INF;
         }
     }
 
-    while (cin >> i >> j >> c) {
+    while (fin >> i >> j >> c) {
         a[i][j] = c;
     }
 
@@ -51,7 +51,7 @@ int main() {
     read();
     dijkstra(istart);
     for (int i = 1; i <= n; i++) {
-        cout << (d[i] == INF ? -1 : d[i]) << ' ';
+        fout << (d[i] == INF ? -1 : d[i]) << ' ';
     }
     return 0;
 }

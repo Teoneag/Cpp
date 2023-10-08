@@ -1,4 +1,6 @@
-#include<bits/stdc++.h>
+#include <fstream>
+#include <string>
+#include <vector>
 using namespace std;
 
 ifstream in("base_converter.in");
@@ -151,7 +153,7 @@ char reVal(int n)
     else
         return (char)(n - 10 + 'A');
 }
-int a = 
+// int a = 
 int val(char c)
 {
     if(c>='0' && c<='9')

@@ -1,8 +1,8 @@
 #include <fstream>
 #include <vector>
 using namespace std;
-ifstream cin("dijkstra.in");
-ofstream cout("dijkstra.out");
+ifstream fin("dijkstra.in");
+ofstream fout("dijkstra.out");
 
 #define INF (1 << 30) - 2
 
@@ -12,9 +12,9 @@ vector<vector<pair<int, int>>> g;
 void read()
 {
     int x, y, w;
-    cin >> n >> s;
+    fin >> n >> s;
     g = vector<vector<pair<int, int>>>(n + 1);
-    while (cin >> x >> y >> w)
+    while (fin >> x >> y >> w)
         g[x].push_back(make_pair(y, w));
 }
 
@@ -36,7 +36,7 @@ void dijkstra()
                 d[g[nm][i].first] = d[nm] + g[nm][i].second;
     }
     for (int i = 1; i <= n; i++)
-        cout << (d[i] == INF ? -1 : d[i]) << ' ';
+        fout << (d[i] == INF ? -1 : d[i]) << ' ';
 }
 
 int main()

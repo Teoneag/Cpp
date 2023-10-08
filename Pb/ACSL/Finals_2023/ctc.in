@@ -1,0 +1,9 @@
+KWIC is an acronym for Key Word In Context, the most common format for concordance lines which is used for indexing in context.
+for in the
+7 15
+concordance lines which <is---------> used----------
+
+The quick, brown fox jumped over the lazy dogs.
+the
+1 6
+---------------- <brown-> fox jumped over
